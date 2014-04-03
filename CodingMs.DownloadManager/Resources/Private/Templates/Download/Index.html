@@ -1,0 +1,20 @@
+<f:layout name="Default"/>
+
+<f:section name="Title"></f:section>
+
+<f:section name="Content">
+	<ul>
+		<f:for each="{downloads}" as="download">
+            <f:if condition="{download.download}">
+                <f:then>
+                    <li>
+                        <a href="{f:uri.resource(resource: download.download)}" target="_blank">{download.name}</a>
+                    </li>
+                </f:then>
+                <f:else>
+                    <li>{download.name} (no download-file available)</li>
+                </f:else>
+            </f:if>
+		</f:for>
+	</ul>
+</f:section>

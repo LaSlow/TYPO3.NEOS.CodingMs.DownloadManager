@@ -1,0 +1,15 @@
+TYPO3:
+
+  # Backend module configuration
+  Neos:
+    userInterface:
+      requireJsPathMapping:
+        'CodingMs.DownloadManager/Inspector/Editors': 'resource://CodingMs.DownloadManager/Public/JavaScript/Content/Inspector/Editors'
+    modules:
+      management:
+        submodules:
+          downloadmanagerplugin:
+            label: 'Download-Manager'
+            controller: '\CodingMs\DownloadManager\Controller\DownloadBackendController'
+            description: "This is a simple Download-Manager module by www.coding.ms"
+            icon: 'icon-download'

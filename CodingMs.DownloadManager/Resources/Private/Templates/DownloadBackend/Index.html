@@ -1,0 +1,72 @@
+<f:layout name="BackendSubModule" />
+<f:section name="content">
+    <f:render partial="BackendModuleStyles" />
+    <div class="row t3-module-container indented downloadmanager-module">
+
+                <br />
+                <p class="introduction">
+                    Hier finden Sie alle Downloads:
+                </p>
+
+                <div class="neos-row-fluid">
+                    <table class="neos-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Kategorien</th>
+                                <th>Download</th>
+                                <th>Unsichtbar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <f:for each="{downloads}" as="download" iteration="itemIteration">
+                            <tr>
+                                <td title="">{download.name}</td>
+                                <td title="">{download.category}</td>
+                                <td title="">
+                                    <f:if condition="{track.track}">
+                                        <f:then>
+                                            <a href="{f:uri.resource(resource: download.download)}" target="_blank">Download: {download.download.filename}</a>
+                                        </f:then>
+                                        <f:else>
+                                            No track available
+                                        </f:else>
+                                    </f:if>
+                                </td>
+                                <td title="">
+                                    <f:if condition="{download.hidden}">
+                                        <f:then>Ja</f:then>
+                                        <f:else>Nein</f:else>
+                                    </f:if>
+                                </td>
+                                <td class="neos-action">
+                                    <div class="neos-pull-right">
+                                        <f:link.action action="editDownload" class="neos-button neos-button-primary"
+                                                       arguments="{download: download}"
+                                                       title="{download.name} bearbeiten">
+                                            <i class="icon-pencil icon-white"></i>
+                                        </f:link.action>
+                                        <f:link.action action="deleteDownload" class="neos-button neos-button-danger"
+                                                       arguments="{download: download}"
+                                                       additionalAttributes="{onclick: 'return confirm(\'Wirklich löschen?!\')' }"
+                                                       title="{download.name} löschen">
+                                            <i class="icon-trash icon-white"></i>
+                                        </f:link.action>
+                                    </div>
+                                </td>
+                            </tr>
+                        </f:for>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="neos-footer">
+                    <f:link.action action="newDownload" class="neos-button neos-button-primary">Neuer Download</f:link.action>
+                </div>
+            </div>
+
+
+
+
+    </div>
+</f:section>

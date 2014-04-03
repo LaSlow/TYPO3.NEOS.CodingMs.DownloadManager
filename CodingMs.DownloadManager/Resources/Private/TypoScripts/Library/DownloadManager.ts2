@@ -1,0 +1,6 @@
+prototype(CodingMs.DownloadManager:Plugin) < prototype(TYPO3.Neos:Plugin)
+prototype(CodingMs.DownloadManager:Plugin) {
+     package = 'CodingMs.DownloadManager'
+     controller = 'Download'
+     action = 'index'
+}

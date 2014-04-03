@@ -1,0 +1,14 @@
+#                                                                        #
+# "Backend" subroutes configuration for the COdingMs.GoogleMaps package           #
+#                                                                        #
+
+
+
+-
+  name: 'DownloadManager Module - DisplayModes'
+  uriPattern: 'downloadManager/displayCategories'
+  defaults:
+    '@package':    'CodingMs.DownloadManager'
+    '@controller': 'DownloadBackend'
+    '@action':     'displayCategories'
+    '@format':     'json'

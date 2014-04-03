@@ -1,0 +1,33 @@
+<f:layout name="BackendSubModule" />
+
+<f:section name="Title">Edit view of AssetController</f:section>
+
+<f:section name="content">
+    <f:render partial="BackendModuleStyles" />
+    <f:form method="post" action="insertDownload" object="{download}" objectName="download">
+        <div class="neos-row-fluid row">
+
+            <br />
+            <p class="introduction">Neuen Download erstellen:</p>
+
+            <div class="neos-span3 neos-image-inputs">
+                <fieldset>
+                    <legend>Allgemeines</legend>
+                    <label for="name">Name/Titel</label>
+                    <f:form.textfield id="name" property="name" placeholder=""/>
+                    <label for="category">Category (multiple categories separated by ,)</label>
+                    <f:form.textarea id="category" property="category" placeholder=""/>
+                    <label for="hidden">Unsichtbar im Frontend</label>
+                    <f:form.checkbox id="hidden" property="hidden" value="1"/>
+                    <f:form.upload property="download"/>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="neos-footer">
+            <f:link.action action="index" title="Cancel creating" class="neos-button">Cancel</f:link.action>
+            <f:form.submit id="save" class="neos-button neos-button-primary" value="Save" />
+        </div>
+    </f:form>
+    <f:form action="index" id="postHelper" method="post"></f:form>
+</f:section>

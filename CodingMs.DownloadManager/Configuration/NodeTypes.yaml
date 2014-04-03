@@ -1,0 +1,16 @@
+'CodingMs.DownloadManager:Plugin':
+  superTypes: ['TYPO3.Neos:Plugin']
+  ui:
+    label: 'Download-Manager'
+    group: 'plugins'
+  properties:
+    displayCategory:
+      type: string
+      ui:
+        label: 'Display category'
+        reloadIfChanged: TRUE
+        inspector:
+          group: pluginSettings
+          editor: 'CodingMs.DownloadManager/Inspector/Editors/DisplayCategoriesEditor'
+          editorOptions:
+            optionName: 'optionValue'

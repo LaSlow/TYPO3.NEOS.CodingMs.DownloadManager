@@ -1,0 +1,14 @@
+#                                                                        #
+# Security policy for the CodingMs.DownloadManager package               #
+#                                                                        #
+
+resources:
+  methods:
+    CodingMs_DownloadManager_DownloadAccess:        'method(CodingMs\DownloadManager\Controller\DownloadController->(initialize|index)Action())'
+    CodingMs_DownloadManager_DownloadBackendAccess: 'method(CodingMs\DownloadManager\Controller\DownloadBackendController->(index|newDownload|insertDownload|deleteDownload|updateDownload|editDownload|displayCategories)Action())'
+
+acls:
+  Everybody:
+    methods:
+      CodingMs_DownloadManager_DownloadAccess: GRANT
+      CodingMs_DownloadManager_DownloadBackendAccess: GRANT
