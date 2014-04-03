@@ -18,9 +18,10 @@ class Version20140402173937 extends AbstractMigration {
 		$this->abortIf($this->connection->getDatabasePlatform()->getName() != "mysql");
 
 
+        $this->addSql("CREATE TABLE IF NOT EXISTS codingms_downloadmanager_domain_model_download (        persistence_object_identifier varchar(40) NOT NULL,  download varchar(40) DEFAULT NULL,  name varchar(255) NOT NULL,  category varchar(255) NOT NULL,  hidden tinyint(1) NOT NULL,  PRIMARY KEY (persistence_object_identifier),  UNIQUE KEY UNIQ_8264248D781A8270 (download)) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
 		//$this->addSql("CREATE TABLE codingms_downloadmanager_domain_model_download (persistence_object_identifier VARCHAR(40) NOT NULL, download VARCHAR(40) DEFAULT NULL, name VARCHAR(255) NOT NULL, category VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_8264248D781A8270 (download), PRIMARY KEY(persistence_object_identifier)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB");
-        //$this->addSql("ALTER TABLE codingms_downloadmanager_domain_model_download ADD CONSTRAINT FK_8264248D781A8270 FOREIGN KEY (download) REFERENCES typo3_flow_resource_resource (persistence_object_identifier)");
+        $this->addSql("ALTER TABLE codingms_downloadmanager_domain_model_download ADD CONSTRAINT FK_8264248D781A8270 FOREIGN KEY (download) REFERENCES typo3_flow_resource_resource (persistence_object_identifier)");
 	}
 
 	/**

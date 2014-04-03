@@ -77,7 +77,7 @@ class Download {
 	 * @param \TYPO3\Flow\Resource\Resource $download
 	 * @return void
 	 */
-	public function setDownload($download) {
+	public function setDownload(\TYPO3\Flow\Resource\Resource $download) {
 		$this->download = $download;
 	}
 

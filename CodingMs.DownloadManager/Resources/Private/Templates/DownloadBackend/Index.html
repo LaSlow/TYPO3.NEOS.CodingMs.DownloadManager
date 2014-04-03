@@ -24,12 +24,12 @@
                                 <td title="">{download.name}</td>
                                 <td title="">{download.category}</td>
                                 <td title="">
-                                    <f:if condition="{track.track}">
+                                    <f:if condition="{download.download}">
                                         <f:then>
                                             <a href="{f:uri.resource(resource: download.download)}" target="_blank">Download: {download.download.filename}</a>
                                         </f:then>
                                         <f:else>
-                                            No track available
+                                            No file available
                                         </f:else>
                                     </f:if>
                                 </td>
@@ -64,9 +64,6 @@
                     <f:link.action action="newDownload" class="neos-button neos-button-primary">Neuer Download</f:link.action>
                 </div>
             </div>
-
-
-
 
     </div>
 </f:section>

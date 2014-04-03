@@ -4,7 +4,8 @@
 
 <f:section name="content">
     <f:render partial="BackendModuleStyles" />
-    <f:form method="post" action="insertDownload" object="{download}" objectName="download">
+    <f:form method="post" action="insertDownload" object="{download}" objectName="download"
+            enctype="multipart/form-data">
         <div class="neos-row-fluid row">
 
             <br />
@@ -16,10 +17,11 @@
                     <label for="name">Name/Titel</label>
                     <f:form.textfield id="name" property="name" placeholder=""/>
                     <label for="category">Category (multiple categories separated by ,)</label>
-                    <f:form.textarea id="category" property="category" placeholder=""/>
+                    <f:form.textfield id="category" property="category" placeholder=""/>
                     <label for="hidden">Unsichtbar im Frontend</label>
                     <f:form.checkbox id="hidden" property="hidden" value="1"/>
-                    <f:form.upload property="download"/>
+                    <label for="download">Download file</label>
+                    <f:form.upload id="download" property="download"/>
                 </fieldset>
             </div>
         </div>
